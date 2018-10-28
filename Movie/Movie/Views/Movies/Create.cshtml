@@ -1,0 +1,31 @@
+﻿
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create</h2>
+<form action="/Movies/Create" method="post">
+    <div>
+        <label>电影名称</label>
+        <input type="text" name="Title" />
+    </div>
+    <div>
+        <label>上映日期</label>
+        <input type="text" name="ReleaseDate" />
+    </div>
+    <div>
+        <label>电影类型</label>
+        <input type="text" name="Genre" />
+    </div>
+    <div>
+        <label>电影票价</label>
+        <input type="text" name="Price" />
+    </div>
+    <div>
+        <input type="submit" value="创建" />
+    </div>
+</form>
+<div>
+    <a href="/Movies">返回</a>
+</div>
+

@@ -1,0 +1,41 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+<script>
+    function conf(id)
+    {
+        if (confirm("是否删除?"))
+        {
+            var url = "/Movies/Delete?id="+id;
+            window.open(url);
+        }
+    }
+</script>
+<h2>Index</h2>
+@model IEnumerable<Movie.Models.Movies>
+<table width="100%">
+    <tr>
+        <th> 电影名称 </th>
+        <th> 上映日期 </th>
+        <th> 电影类型 </th>
+        <th> 电影票价 </th>
+        <th> 操作 </th>
+    </tr>
+    @foreach (var item in Model)
+    {
+<tr>
+    <td> <label>@item.Title</label> </td>
+    <td> <label>@item.ReleaseDate</label> </td>
+    <td> <label>@item.Genre</label> </td>
+    <td> <label>@item.Price</label> </td>
+    <td>
+        <a href="/Movies/Edit?id=@item.ID">编辑</a>
+        <a href="/Movies/Details?id=@item.ID">明细</a>
+        <a href="#" onclick="conf(@item.ID)">删除</a>
+    </td>
+</tr>
+}
+</table>
+
+

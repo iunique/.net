@@ -1,0 +1,17 @@
+﻿
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Index</h2>
+@model  Movie.Models.Movies
+    <form action="/Movies/Adj" method="post">
+            <input name="ID" value=@Model.ID style="display:none"/>
+            <label>电影名称:</label><input type="text" name="Title" value=@Model.Title /><br/>
+             <label>上映日期:</label><input type="text" name="ReleaseDate" value=@Model.ReleaseDate /><br />
+             <label>电影类型:</label><input type="text" name="Genre" value=@Model.Genre /><br />
+            <label>电影票价:</label><input type="text" name="Price" value=@Model.Price /><br />
+            <input type="submit" value="提交修改" />
+     </form>
+
+
